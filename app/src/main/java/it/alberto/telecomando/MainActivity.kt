@@ -2,6 +2,7 @@ package it.alberto.telecomando
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.AlertDialog
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -10,6 +11,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : Activity() {
 
@@ -29,7 +31,7 @@ class MainActivity : Activity() {
         tastierino = findViewById(R.id.tastierino)
         bottone123 = findViewById(R.id.b_123)
 
-        tv = SamsungTv(this) { mostraStato(it) }
+        tv = SamsungTv(this, { mostraStato(it) }, { Toast.makeText(this, it, Toast.LENGTH_LONG).show() })
 
         // Tasti semplici
         mapOf(
@@ -61,6 +63,18 @@ class MainActivity : Activity() {
         findViewById<View>(R.id.b_netflix).setOnClickListener { vibra(it); tv.apriApp(SamsungTv.NETFLIX) }
         findViewById<View>(R.id.b_prime).setOnClickListener { vibra(it); tv.apriApp(SamsungTv.PRIME_VIDEO) }
         findViewById<View>(R.id.b_youtube).setOnClickListener { vibra(it); tv.apriApp(SamsungTv.YOUTUBE) }
+
+        // Tenendo premuto un tasto app si vede l'elenco delle app del televisore (per diagnosi)
+        listOf(R.id.b_netflix, R.id.b_prime, R.id.b_youtube).forEach { id ->
+            findViewById<View>(id).setOnLongClickListener {
+                AlertDialog.Builder(this)
+                    .setTitle("App sul televisore")
+                    .setMessage(tv.descriviAppInstallate())
+                    .setPositiveButton("OK", null)
+                    .show()
+                true
+            }
+        }
 
         // Accensione: se il televisore risponde lo spegne, se è spento lo risveglia
         findViewById<View>(R.id.b_power).setOnClickListener {
