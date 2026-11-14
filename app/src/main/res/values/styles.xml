@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Tema" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/sfondo</item>
+        <item name="android:statusBarColor">@color/sfondo</item>
+        <item name="android:navigationBarColor">@color/sfondo</item>
+    </style>
+
+    <style name="Tasto">
+        <item name="android:background">@drawable/tasto</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="TastoTondo" parent="Tasto">
+        <item name="android:layout_width">88dp</item>
+        <item name="android:layout_height">88dp</item>
+        <item name="android:background">@drawable/tasto_tondo</item>
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <style name="TastoNumero" parent="Tasto">
+        <item name="android:layout_width">88dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <style name="TastoColonna" parent="Tasto">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+</resources>

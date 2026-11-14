@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Stato + accensione -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/stato"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="● Collegamento in corso…"
+            android:textColor="#FFC107"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/b_power"
+            style="@style/Tasto"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/tasto_power"
+            android:text="⏻"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <!-- App -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/b_netflix"
+            style="@style/Tasto"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tasto_netflix"
+            android:text="NETFLIX"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/b_prime"
+            style="@style/Tasto"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tasto_prime"
+            android:text="prime video"
+            android:textAllCaps="false"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/b_youtube"
+            style="@style/Tasto"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tasto_youtube"
+            android:text="▶ YouTube"
+            android:textAllCaps="false"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Frecce oppure tastierino -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1">
+
+        <GridLayout
+            android:id="@+id/frecce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:columnCount="3"
+            android:rowCount="3">
+
+            <Space android:layout_width="88dp" android:layout_height="88dp" />
+            <Button android:id="@+id/b_su" style="@style/TastoTondo" android:text="▲" />
+            <Space android:layout_width="88dp" android:layout_height="88dp" />
+
+            <Button android:id="@+id/b_sinistra" style="@style/TastoTondo" android:text="◀" />
+            <Button
+                android:id="@+id/b_ok"
+                style="@style/TastoTondo"
+                android:background="@drawable/tasto_ok"
+                android:text="OK" />
+            <Button android:id="@+id/b_destra" style="@style/TastoTondo" android:text="▶" />
+
+            <Space android:layout_width="88dp" android:layout_height="88dp" />
+            <Button android:id="@+id/b_giu" style="@style/TastoTondo" android:text="▼" />
+            <Space android:layout_width="88dp" android:layout_height="88dp" />
+        </GridLayout>
+
+        <GridLayout
+            android:id="@+id/tastierino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:columnCount="3"
+            android:visibility="gone">
+
+            <Button android:id="@+id/b_1" style="@style/TastoNumero" android:text="1" />
+            <Button android:id="@+id/b_2" style="@style/TastoNumero" android:text="2" />
+            <Button android:id="@+id/b_3" style="@style/TastoNumero" android:text="3" />
+            <Button android:id="@+id/b_4" style="@style/TastoNumero" android:text="4" />
+            <Button android:id="@+id/b_5" style="@style/TastoNumero" android:text="5" />
+            <Button android:id="@+id/b_6" style="@style/TastoNumero" android:text="6" />
+            <Button android:id="@+id/b_7" style="@style/TastoNumero" android:text="7" />
+            <Button android:id="@+id/b_8" style="@style/TastoNumero" android:text="8" />
+            <Button android:id="@+id/b_9" style="@style/TastoNumero" android:text="9" />
+            <Space android:layout_width="88dp" android:layout_height="64dp" />
+            <Button android:id="@+id/b_0" style="@style/TastoNumero" android:text="0" />
+            <Space android:layout_width="88dp" android:layout_height="64dp" />
+        </GridLayout>
+    </FrameLayout>
+
+    <!-- Indietro / Home / 123 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/b_indietro"
+            style="@style/Tasto"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="↩ Indietro" />
+
+        <Button
+            android:id="@+id/b_home"
+            style="@style/Tasto"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="⌂ Home" />
+
+        <Button
+            android:id="@+id/b_123"
+            style="@style/Tasto"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="123" />
+    </LinearLayout>
+
+    <!-- Volume e canali -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button android:id="@+id/b_vol_su" style="@style/TastoColonna" android:text="VOL +" />
+            <Button android:id="@+id/b_muto" style="@style/TastoColonna" android:text="🔇 Muto" android:textAllCaps="false" />
+            <Button android:id="@+id/b_vol_giu" style="@style/TastoColonna" android:text="VOL −" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button android:id="@+id/b_can_su" style="@style/TastoColonna" android:text="CANALE ▲" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:gravity="center"
+                android:text="Canali"
+                android:textColor="#9E9E9E"
+                android:textSize="16sp" />
+            <Button android:id="@+id/b_can_giu" style="@style/TastoColonna" android:text="CANALE ▼" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
